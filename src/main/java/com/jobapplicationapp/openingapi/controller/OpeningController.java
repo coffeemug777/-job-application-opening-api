@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/")
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@RequestMapping("/api/")
 public class OpeningController {
 
     @Autowired
