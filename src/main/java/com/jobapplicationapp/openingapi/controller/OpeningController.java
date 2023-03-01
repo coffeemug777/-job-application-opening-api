@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
@@ -24,6 +25,12 @@ public class OpeningController {
     @GetMapping("opening/all")
     public List<Opening> getAll() {
         return this.openingService.getAll();
+    }
+
+
+    @GetMapping("opening/{id}")
+    public Optional<Opening> get(@PathVariable String id) {
+        return this.openingService.get(id);
     }
 
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class OpeningService {
@@ -27,5 +28,9 @@ public class OpeningService {
 
     public List<Opening> getAll() {
         return this.openingRepository.findAll();
+    }
+
+    public Optional<Opening> get(String id) {
+        return this.openingRepository.findById(id);
     }
 }
